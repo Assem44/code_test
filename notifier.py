@@ -1,11 +1,9 @@
 import requests
 
 def send_message(message_text):
-    # ضع التوكن الخاص بالبوت هنا (أو اسحبه من بيئة العمل)
-    BOT_TOKEN = "8734357312:AAHrVjNLSpOM9fZGSjL94oLUi5odzsg2HDE"
-    
-    # ضع معرّف قناتك العامة أو الـ Chat ID الخاص بالقناة الخاصة هنا
-    CHANNEL_ID = "-1003931694939" 
+
+    BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+    CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
     
     # الرابط الرسمي لإرسال الرسائل عبر تليجرام API
     url = f"https://telegram.org{BOT_TOKEN}/sendMessage"
