@@ -28,12 +28,12 @@ jobs:
         timeout 330m python3 script.py || true
 
     - name: Commit and Push Changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add generated_vault/
-        git diff-index --quiet HEAD || git commit -m "💾 تحديث تلقائي: إضافة الأكواد اليومية وحساب السطور"
-        git push
+      # run: |
+      #   git config --local user.email "action@github.com"
+      #   git config --local user.name "GitHub Action"
+      #   git add generated_vault/
+      #   git diff-index --quiet HEAD || git commit -m "💾 تحديث تلقائي: إضافة الأكواد اليومية وحساب السطور"
+      #   git push
 
 
 
