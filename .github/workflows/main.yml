@@ -34,3 +34,18 @@ jobs:
         git add generated_vault/
         git diff-index --quiet HEAD || git commit -m "💾 تحديث تلقائي: إضافة الأكواد اليومية وحساب السطور"
         git push
+
+
+
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # التأكد من وجود المجلد وتجهيز التغييرات إذا وُجدت
+        if [ -d "generated_vault" ]; then
+          git add generated_vault/
+          git diff-index --quiet HEAD || git commit -m "💾 تحديث تلقائي: إضافة الأكواد اليومية وحساب السطور"
+          git push
+        else
+          echo "⚠️ لم يتم العثور على المجلد generated_vault، قد يكون السكربت لم يقم بإنشائه بعد."
+        fi
